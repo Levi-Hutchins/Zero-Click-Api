@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon",
+    "start:dev": "NODE_ENV=development nodemon",
     "build": "tsc",
-    "start": "node dist/server.js",
+    "start:prod": "NODE_ENV=production node dist/server.js",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write \"src/**/*.ts\""
@@ -18,10 +18,17 @@
     ]
   },
   "dependencies": {
+    "@types/helmet": "^4.0.0",
+    "@types/mongodb": "^4.0.7",
+    "@types/mongoose": "^5.11.97",
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.16.5",
+    "morgan": "^1.10.1",
     "node-env-schema": "^1.0.1",
     "winston": "^3.17.0"
   },
@@ -29,6 +36,7 @@
     "@types/chalk": "^0.4.31",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
     "@types/node": "^24.1.0",
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
