@@ -14,10 +14,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: typescript
+
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20' 
+        node-version: '20'
         cache: 'yarn'
 
     - name: Install dependencies
@@ -31,3 +36,6 @@ jobs:
 
     # - name: Run tests
     #   run: yarn test
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
