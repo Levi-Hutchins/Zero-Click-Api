@@ -6,7 +6,13 @@ export function notFoundMiddleware(req: Request, res: Response, next: NextFuncti
   next(error);
 }
 
-export function errorHandlerMiddleware(err: Error, res: Response, next: NextFunction) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function errorHandlerMiddleware(
+  err: Error,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
   // Prevent duplicate response
   if (res.headersSent) {
     return next(err);
