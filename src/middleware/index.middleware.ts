@@ -6,7 +6,6 @@ export function notFoundMiddleware(req: Request, res: Response, next: NextFuncti
   next(error);
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function errorHandlerMiddleware(
   err: Error,
   req: Request,
