@@ -9,14 +9,15 @@ dotenv.config({ path: envFile });
 
 const schema = defineEnv({
   PORT: { type: 'port', default: 3000 },
-  ENABLE_FEATURE: { type: 'boolean', default: false },
-  TEST: { type: 'boolean', default: false },
   ALLOWED_ORIGINS: { type: 'string', default: 'localhost' },
-  MONGODB_CONNECTION_STRING: { type: 'string', default: '' },
-  MONGODB_DATABASE: { type: 'string', default: '' },
-  SCAN_RESULTS_COLLECTION: { type: 'string', default: '' },
-  SCAN_SUBMISSIONS_COLLECTION: { type: 'string', default: '' },
-
+  MONGODB_CONNECTION_STRING: { type: 'string' },
+  MONGODB_DATABASE: { type: 'string' },
+  SCAN_RESULTS_COLLECTION: { type: 'string' },
+  SCAN_SUBMISSIONS_COLLECTION: { type: 'string' },
+  CLOUDFLARE_SCAN_ENDPOINT: { type: 'string' },
+  CLOUDFLARE_RESULTS_ENDPOINT: { type: 'string' },
+  CLOUDFLARE_API_KEY: { type: 'string' },
+  ZERO_CLICK_API_KEY: { type: 'string' },
 });
 
 export const env = validateEnv(schema);
