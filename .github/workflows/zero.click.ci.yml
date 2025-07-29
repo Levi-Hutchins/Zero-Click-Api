@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -18,13 +17,17 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'  # adjust based on your project
+        node-version: '20' 
+        cache: 'yarn'
 
     - name: Install dependencies
-      run: npm install
+      run: yarn install --frozen-lockfile
 
-    - name: Build TypeScript
-      run: npm run build
+    - name: Build
+      run: yarn build
+
+    - name: Lint
+      run: yarn lint
 
     # - name: Run tests
-    #   run: npm test
+    #   run: yarn test
