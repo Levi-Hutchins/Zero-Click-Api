@@ -1,10 +1,10 @@
 import app from './app';
 
 import { logger } from './utils/logger';
-import { envVars } from './config/env.config';
+import { env } from './config/env.config';
 import { connectMongoDB } from './config/mongoose';
 
-const PORT = envVars.PORT;
+const PORT = env.PORT;
 const RUNTIME_ENV = process.env.NODE_ENV;
 
 connectMongoDB();

@@ -20,4 +20,4 @@ const schema = defineEnv({
   ZERO_CLICK_API_KEY: { type: 'string' },
 });
 
-export const envVars = validateEnv(schema);
+export const env = validateEnv(schema);

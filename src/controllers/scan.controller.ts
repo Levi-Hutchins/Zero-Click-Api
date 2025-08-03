@@ -1,8 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
-import { getAllSubmissions } from '../services/scan.service';
+import { getAllSubmissions, getSubmissionById } from '../services/scan.service';
 import { logger } from '../utils/logger';
 
-export const getAllScanSubmissions = async (req: Request, res: Response, next: NextFunction) => {
+export const getAllScanSubmissionsController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const scanSubmissions = await getAllSubmissions();
     if (!scanSubmissions || scanSubmissions.length === 0) {
@@ -14,4 +18,12 @@ export const getAllScanSubmissions = async (req: Request, res: Response, next: N
     res.status(500).json({ message: 'Internal Server Error' });
     next(error);
   }
+};
+
+export const getSubmissionByIdController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  return res.status(501).json({ message: 'Not Implemented' });
 };

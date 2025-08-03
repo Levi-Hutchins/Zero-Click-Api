@@ -1,8 +1,8 @@
 import { connect, set } from 'mongoose';
 import { logger } from '../utils/logger';
-import { envVars } from './env.config';
+import { env } from './env.config';
 
-const MONGO_DB_URI = envVars.MONGODB_CONNECTION_STRING || '';
+const MONGO_DB_URI = env.MONGODB_CONNECTION_STRING || '';
 
 export const connectMongoDB = async () => {
   try {

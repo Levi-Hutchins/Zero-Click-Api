@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-import { envVars } from '../../config/env.config';
+import { env } from '../../config/env.config';
 
 export interface IScanSubmission extends Document {
   uuid: string;
@@ -20,7 +20,7 @@ const SubmissionSchema: Schema = new Schema(
   },
   {
     timestamps: true,
-    collection: envVars.SCAN_SUBMISSIONS_COLLECTION || 'default_scan_submissions',
+    collection: env.SCAN_SUBMISSIONS_COLLECTION || 'default_scan_submissions',
   }
 );
 
